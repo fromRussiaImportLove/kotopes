@@ -4,12 +4,29 @@ import './App.css';
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Metrics from '../Metrics/Metrics';
-import data from '../../data/data'
+import * as Api from '../../utils/Api';
 
 
 function App() {
 
-  console.log(data)
+  const [metrics, setMetrics] = React.useState([])
+
+  React.useState(() => {
+    let dataMetrics = []
+    Api.getMetrics()
+      .then(data => {
+        dataMetrics = data.map(item => {
+            return {
+                shelter: item.shelter,
+                day: item.sday,
+                week: item.sweek,
+                month: item.smonth
+            }
+        })
+        setMetrics(dataMetrics)
+      })
+}, [])
+
   return (
     <div className="app">
         <Header />
@@ -19,7 +36,7 @@ function App() {
           </Route>
 
           <Route path="/cat">
-            <Metrics data={data}/>
+            <Metrics data={metrics}/>
           </Route>
 
           <Route path="/dog">

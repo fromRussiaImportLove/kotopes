@@ -1,43 +1,24 @@
 import React from 'react'
 import './Metrics.css';
 import { ResponsiveBar } from '@nivo/bar'
-import * as Api from '../../utils/Api';
+
 
 
 function Metrics({data}) {
 
-    const [metrics, setMetrics] = React.useState(data)
-
-    React.useState(() => {
-        Api.getMetrics()
-            .then(data => console.log(data))
-    }, [])
+    const [dataSelect, setData] = React.useState([])
 
     function handleSelect(evt) {
-        if (evt.target.value === 'shelter-1') {
-            setMetrics([data[0]])
-        }
-        if (evt.target.value === 'shelter-2') {
-            setMetrics([data[1]])
-        }
-        if (evt.target.value === 'shelter-3') {
-            setMetrics([data[2]])
-        }
-        if (evt.target.value === 'shelter-4') {
-            setMetrics([data[3]])
-        }
-        if (evt.target.value === 'all') {
-            setMetrics(data)
-        }
+            setData([data.find(item => item.shelter === evt.target.value)])     
     }
 
     return (
         <div className="metrics">
             <div className="metrics__container">
                 <ResponsiveBar
-                data={metrics}
-                keys={[ 'hot dog', 'burger', 'sandwich', 'kebab', 'fries', 'donut' ]}
-                indexBy="country"
+                data={dataSelect}
+                keys={[ 'day', 'week', 'month']}
+                indexBy="shelter"
                 margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
                 padding={0.3}
                 valueScale={{ type: 'linear' }}
@@ -83,7 +64,7 @@ function Metrics({data}) {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'country',
+                    legend: 'Shelter',
                     legendPosition: 'middle',
                     legendOffset: 32
                 }}
@@ -91,7 +72,7 @@ function Metrics({data}) {
                     tickSize: 5,
                     tickPadding: 5,
                     tickRotation: 0,
-                    legend: 'food',
+                    legend: 'Amout',
                     legendPosition: 'middle',
                     legendOffset: -40
                 }}
@@ -129,11 +110,9 @@ function Metrics({data}) {
             </div>
             <div className="metrics__input-container">
                 <select className="metrics__select" onChange={handleSelect}>
-                    <option value="shelter-1">Приют 1</option>
-                    <option value="shelter-2">Приют 2</option>
-                    <option value="shelter-3">Приют 3</option>
-                    <option value="shelter-4">Приют 4</option>
-                    <option defaultValue value="all">Все приюты</option>
+                    {data.map((item) => (
+                        <option key={item.id} value={item.shelter}>{item.shelter}</option>
+                    ))}
                 </select>
                 <form className="metrics__form">
                     <h2 className="metrics__title">Настройка цен</h2>

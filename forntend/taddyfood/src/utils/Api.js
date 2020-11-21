@@ -7,3 +7,4 @@ export const getMetrics = () => {
     })
     .then((res) => res.json())
 }
+
