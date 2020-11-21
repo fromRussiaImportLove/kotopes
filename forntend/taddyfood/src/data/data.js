@@ -104,6 +104,7 @@ const data = [
       "donut": 194,
       "donutColor": "hsl(39, 70%, 50%)"
     }
+    
   ]
 
   export default data;

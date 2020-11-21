@@ -1,6 +1,7 @@
 .main__container {
     width: 1225px;
     margin: 0 auto;
+    margin-top: 80px;
 }
 
 .main__description {
