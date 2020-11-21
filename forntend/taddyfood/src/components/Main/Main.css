@@ -9,4 +9,10 @@
     font-size: 60px;
     line-height: 64px;
     font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.main__cards {
+    display: flex;
+    justify-content: space-between;
 }
