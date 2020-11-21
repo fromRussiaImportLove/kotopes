@@ -1,4 +1,4 @@
-from django.urls import include, path
+from django.urls import include, path, re_path
 from rest_framework.routers import DefaultRouter
 
 from api.views import (PaymentsViewSet, AnimalsViewSet,
@@ -17,5 +17,8 @@ urlpatterns = [
     path('v1/', include(router_v1.urls)),
     path('v1/import_payments_data', import_payments_data),
     path('v1/history_data', calculate_history),
-    path('v1/calculate_newdata', calculate_newdata)
+    path('v1/calculate_newdata', calculate_newdata),
+    #re_path(r'^v1/calculate_newdata(?P<\d)/(?P<subject>\w)/(?P<action>\w)(?:/(?P<subj_id>\d))?/$',
+    #        calculate_newdata_get),
+
 ]

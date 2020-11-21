@@ -46,10 +46,19 @@ def calculate_history(request):
 
 @csrf_exempt
 def calculate_newdata(request):
-    min_price = request.POST.get('min_price')
-    n_sales = request.POST.get('n_sales')
-    if min_price is not None and n_sales is not None:
-        result = ncalc(int(min_price), int(n_sales))
-        return HttpResponse(result)
-    else:
-        return HttpResponse('need post data: min_price, n_sales')
+    if request.method == 'POST':
+        min_price = request.POST.get('min_price')
+        n_sales = request.POST.get('n_sales')
+        if min_price is not None and n_sales is not None:
+            result = ncalc(int(min_price), int(n_sales))
+            return HttpResponse(result)
+        else:
+            return HttpResponse('need post data: min_price, n_sales')
+    if request.method == 'GET':
+        min_price = request.GET.get('min_price')
+        n_sales = request.GET.get('n_sales')
+        if min_price is not None and n_sales is not None:
+            result = ncalc(int(min_price), int(n_sales))
+            return HttpResponse(result)
+        else:
+            return HttpResponse('need post data: min_price, n_sales')
