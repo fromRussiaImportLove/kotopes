@@ -1,16 +1,15 @@
 .main__container {
     width: 1225px;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .main__description {
     text-align: center;
-    color: #ffffff;
     font-size: 60px;
     line-height: 64px;
     font-weight: 400;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .main__cards {

@@ -1,5 +1,5 @@
 export const getMetrics = () => {
-    return fetch(`kotopes.lukojo.com/api/v1/history_data`, {
+    return fetch(`http://kotopes.lukojo.com/api/v1/history_data`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json',

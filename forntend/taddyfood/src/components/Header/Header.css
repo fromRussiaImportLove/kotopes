@@ -12,5 +12,7 @@
 
 .header__logo {
     color: #ffffff;
+    text-decoration: none;
+    font-size: 28px;
 }
 
