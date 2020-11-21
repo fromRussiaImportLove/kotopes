@@ -2,6 +2,7 @@ from rest_framework import status, viewsets, filters
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from django.views.decorators.csrf import csrf_exempt
 
 from api.serializers import PaymentsSerializer, AnimalsSerializer, TransactionsSerializer
 from api.models import Payments, Animals, Transactions
@@ -43,11 +44,11 @@ def calculate_history(request):
     #return JsonResponse(result)
     return HttpResponse(result)
 
-
+@csrf_exempt
 def calculate_newdata(request):
     min_price = request.POST.get('min_price')
     n_sales = request.POST.get('n_sales')
-    if min_price and n_sales:
+    if min_price is not None and n_sales is not None:
         result = ncalc(int(min_price), int(n_sales))
         return HttpResponse(result)
     else:
