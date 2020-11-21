@@ -49,7 +49,7 @@ def fcalc(data):
     df_shelters['week'] = week
     df_shelters['month'] = month
     df_shelters['sday'] = sdays
-    df_shelters['sweek'] = sweek
+    df_shelters['sweek'] = sweeks
     df_shelters['smonth'] = df_shelters['price'] - df_shelters['sweek']- df_shelters['sday']
     return df_shelters.to_json(orient="records", force_ascii=False)
 
