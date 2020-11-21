@@ -4,12 +4,27 @@ import { ResponsiveBar } from '@nivo/bar'
 
 
 
-function Metrics({data}) {
+function Metrics({data, handleSubmitForm}) {
 
-    const [dataSelect, setData] = React.useState([])
+    const [dataSelect, setData] = React.useState([]);
+    const [amount, setAmount] = React.useState('');
+    const [price, setPrice] = React.useState('');
 
+    //получение метрик по приюту
     function handleSelect(evt) {
             setData([data.find(item => item.shelter === evt.target.value)])     
+    }
+
+    function handleAmountInput(evt) {
+        setAmount(evt.target.value)
+    }
+
+    function handlePriceInput(evt) {
+        setPrice(evt.target.value)
+    }
+
+    function handleSubmit() {
+        handleSubmitForm(amount, price)
     }
 
     return (
@@ -114,11 +129,10 @@ function Metrics({data}) {
                         <option key={item.id} value={item.shelter}>{item.shelter}</option>
                     ))}
                 </select>
-                <form className="metrics__form">
+                <form className="metrics__form" onSubmit={handleSubmit}>
                     <h2 className="metrics__title">Настройка цен</h2>
-                    <label className="metrics__label">Цена за КотоДень<input className="metrics__input" type="text"/></label>
-                    <label className="metrics__label">Цена за КотоНеделю<input className="metrics__input" type="text"/></label>
-                    <label className="metrics__label">Цена за КотоМесяц<input className="metrics__input" type="text"/></label>
+                    <label className="metrics__label">Количество продаж<input className="metrics__input" type="text" onChange={handleAmountInput}/></label>
+                    <label className="metrics__label">Минимальная стоимость КотоДня<input className="metrics__input" type="text" onChange={handlePriceInput}/></label>
                     <button className="metrics__button">Submit</button>
                 </form>
             </div>

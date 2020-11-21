@@ -5,7 +5,7 @@
 
 
 .metrics__container {
-    width: 80%;
+    width: 70%;
     height: 600px;
     margin: 0;
 }
@@ -74,4 +74,6 @@
         border: none;
         border-radius: 15px;
         padding: 10px 0;
+        background-color: #7200e0;
+        color: #ffffff;
     }

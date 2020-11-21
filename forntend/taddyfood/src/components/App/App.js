@@ -27,6 +27,12 @@ function App() {
       })
 }, [])
 
+  function handleSubmitForm(amount, price) {
+    console.log(amount, price)
+    Api.getNewMetrics(amount, price)
+      .then(res => console.log(res))
+  }
+
   return (
     <div className="app">
         <Header />
@@ -36,7 +42,7 @@ function App() {
           </Route>
 
           <Route path="/cat">
-            <Metrics data={metrics}/>
+            <Metrics data={metrics} handleSubmitForm={handleSubmitForm}/>
           </Route>
 
           <Route path="/dog">
