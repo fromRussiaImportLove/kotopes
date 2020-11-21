@@ -1,0 +1,9 @@
+.app {
+    background-color: red;
+    min-height: 100vh;
+}
+
+.container {
+    width: 1440px;
+    margin: 0 auto;
+}
