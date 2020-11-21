@@ -28,7 +28,6 @@ function App() {
 }, [])
 
   function handleSubmitForm(amount, price) {
-    console.log(amount, price)
     Api.getNewMetrics(amount, price)
       .then(res => console.log(res))
   }

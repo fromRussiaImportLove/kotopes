@@ -8,13 +8,13 @@ export const getMetrics = () => {
     .then((res) => res.json())
 }
 
-export const getNewMetrics = (n_sales, min_price) => {
-    return fetch(`http://kotopes.lukojo.com/api/v1/calculate_newdata`, {
+export const getNewMetrics = () => {
+    return fetch(`kotopes.lukojo.com/api/v1/calculate_newdata?min_price=100&n_sales=1000`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-        },
-        body: JSON.stringify({n_sales: n_sales, min_price: min_price})
+            'Content-Type': 'text/plain',
+        }
     })
     .then((res) => {
         if (res.ok) {
