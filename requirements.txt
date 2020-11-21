@@ -1,6 +1,8 @@
 django==3.0.11
+django-filter==2.3.0
 djangorestframework-simplejwt
 djangorestframework==3.11.0  # via -r requirements.in
 flake8
 isort
 django-environ
+pandas
