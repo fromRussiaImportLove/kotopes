@@ -45,7 +45,10 @@ def calculate_history(request):
 
 
 def calculate_newdata(request):
-    min_price = int(request.POST['min_price'])
-    n_sales = int(request.POST['n_sales'])
-    result = ncalc(min_price, n_sales)
-    return HttpResponse(result)
+    min_price = request.POST.get('min_price')
+    n_sales = request.POST.get('n_sales')
+    if min_price and n_sales:
+        result = ncalc(int(min_price), int(n_sales))
+        return HttpResponse(result)
+    else:
+        return HttpResponse('need post data: min_price, n_sales')
