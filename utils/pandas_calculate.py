@@ -30,25 +30,40 @@ def fcalc(data):
     days = []
     week = []
     month = []
+    sdays = []
+    sweeks = []
     for i in df_shelters['shelter'].to_list():
         d = df_prices_cats[(df_prices_cats['shelter'] == i) & (df_prices_cats['item'] == 'котодень')]['price'].median()
         w = df_prices_cats[(df_prices_cats['shelter'] == i) & (df_prices_cats['item'] == 'котонеделя')][
             'price'].median()
         m = df_prices_cats[(df_prices_cats['shelter'] == i) & (df_prices_cats['item'] == 'котомесяц')]['price'].median()
+        sd = df_prices_cats[(df_prices_cats['shelter'] == i) & (df_prices_cats['item'] == 'котодень')]['price'].sum()
+        sw = df_prices_cats[(df_prices_cats['shelter'] == i) & (df_prices_cats['item'] == 'котонеделя')][
+            'price'].sum()
         days.append(d)
         week.append(w)
         month.append(m)
+        sdays.append(sd)
+        sweeks.append(sw)
     df_shelters['day'] = days
     df_shelters['week'] = week
     df_shelters['month'] = month
-    return df_shelters.to_json(orient="records")
+    df_shelters['sday'] = sdays
+    df_shelters['sweek'] = sweek
+    df_shelters['smonth'] = df_shelters['price'] - df_shelters['sweek']- df_shelters['sday']
+    return df_shelters.to_json(orient="records", force_ascii=False)
 
 
 def ncalc(x, n_sales):
     day = x + 53
     week = (day - 30) * 7
     month = x * 30
-    nprice = day * 0.9 * n_sales + week * 0.09 * n_sales + month * 0.01 * n_sales
+    sday = day * 0.9 * n_sales
+    sweek = week * 0.09 * n_sales
+    smonth = month * 0.01 * n_sales
+    nprice = sday + sweek + smonth
     nprice_per_sale = nprice / n_sales
     return json.dumps({'nday': day, 'nweek': week, 'nmonth': month,
-                       'nprice': nprice, 'nprice_per_sale': nprice_per_sale})
+                       'nprice': nprice, 'nprice_per_sale': nprice_per_sale, 'sday' : sday,
+                       'sweek' : sweek, 'smonth' : smonth
+                      })
