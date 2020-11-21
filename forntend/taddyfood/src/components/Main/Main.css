@@ -1,0 +1,12 @@
+.main__container {
+    width: 1225px;
+    margin: 0 auto;
+}
+
+.main__description {
+    text-align: center;
+    color: #ffffff;
+    font-size: 60px;
+    line-height: 64px;
+    font-weight: 400;
+}
