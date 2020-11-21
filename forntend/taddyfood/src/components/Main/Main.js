@@ -8,9 +8,9 @@ function Main() {
             <div className="main__container">
                 <p className="main__description">Что то о метриках</p>
                 <div className="main__cards">
-                    <Card title="Метрики с котами"/>
-                    <Card title="Метрики с собаками"/>
-                    <Card title="Все метрики"/>
+                    <Card title="Метрики с котами" linkTo="cat"/>
+                    <Card title="Метрики с собаками" linkTo="dog"/>
+                    <Card title="Все метрики" linkTo="all"/>
                 </div>
             </div>
         </section>

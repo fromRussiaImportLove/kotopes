@@ -1,10 +1,13 @@
 import React from 'react';
 import './Card.css';
+import { Link } from 'react-router-dom';
 
-function Card({ title }) {
+function Card({ title, linkTo }) {
     return (
         <div className="card">
-            <div className="card__image"></div>
+            <Link to={{pathname: `/${linkTo}`}} className="card__link">
+                <div className="card__image"></div>
+            </Link>
             <h2 className="card__title">{title}</h2>
         </div>
     )

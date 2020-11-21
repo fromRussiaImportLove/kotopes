@@ -4,6 +4,10 @@
     flex-direction: column;
 }
 
+.card__link {
+    display: block;
+}
+
 .card__image {
     border-radius: 50%;
     background-color: aqua;
