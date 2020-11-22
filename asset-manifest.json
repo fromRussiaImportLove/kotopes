@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.bafe82b1.chunk.css",
-    "main.js": "/static/js/main.5d35206d.chunk.js",
-    "main.js.map": "/static/js/main.5d35206d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f9281452.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f9281452.js.map",
-    "static/js/2.ed134442.chunk.js": "/static/js/2.ed134442.chunk.js",
-    "static/js/2.ed134442.chunk.js.map": "/static/js/2.ed134442.chunk.js.map",
-    "static/js/3.71955f0e.chunk.js": "/static/js/3.71955f0e.chunk.js",
-    "static/js/3.71955f0e.chunk.js.map": "/static/js/3.71955f0e.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.bafe82b1.chunk.css.map": "/static/css/main.bafe82b1.chunk.css.map",
-    "static/js/2.ed134442.chunk.js.LICENSE.txt": "/static/js/2.ed134442.chunk.js.LICENSE.txt",
-    "static/media/catdogg.3e1d3132.jpg": "/static/media/catdogg.3e1d3132.jpg",
-    "static/media/catt.ea2a174f.png": "/static/media/catt.ea2a174f.png",
-    "static/media/dogg.b56a456a.png": "/static/media/dogg.b56a456a.png"
+    "main.css": "./static/css/main.bafe82b1.chunk.css",
+    "main.js": "./static/js/main.31da37db.chunk.js",
+    "main.js.map": "./static/js/main.31da37db.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.2d2811b0.js",
+    "runtime-main.js.map": "./static/js/runtime-main.2d2811b0.js.map",
+    "static/js/2.ed134442.chunk.js": "./static/js/2.ed134442.chunk.js",
+    "static/js/2.ed134442.chunk.js.map": "./static/js/2.ed134442.chunk.js.map",
+    "static/js/3.71955f0e.chunk.js": "./static/js/3.71955f0e.chunk.js",
+    "static/js/3.71955f0e.chunk.js.map": "./static/js/3.71955f0e.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.bafe82b1.chunk.css.map": "./static/css/main.bafe82b1.chunk.css.map",
+    "static/js/2.ed134442.chunk.js.LICENSE.txt": "./static/js/2.ed134442.chunk.js.LICENSE.txt",
+    "static/media/catdogg.3e1d3132.jpg": "./static/media/catdogg.3e1d3132.jpg",
+    "static/media/catt.ea2a174f.png": "./static/media/catt.ea2a174f.png",
+    "static/media/dogg.b56a456a.png": "./static/media/dogg.b56a456a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f9281452.js",
+    "static/js/runtime-main.2d2811b0.js",
     "static/js/2.ed134442.chunk.js",
     "static/css/main.bafe82b1.chunk.css",
-    "static/js/main.5d35206d.chunk.js"
+    "static/js/main.31da37db.chunk.js"
   ]
 }
