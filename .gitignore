@@ -19,3 +19,5 @@ __pycache__/
 static/
 
 db.sqlite3 
+
+frontend/node_modules
